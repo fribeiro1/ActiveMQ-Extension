@@ -18,10 +18,10 @@ import org.nlogo.api.DefaultReporter;
 import org.nlogo.api.ExtensionException;
 import org.nlogo.api.LogoException;
 
-public final class CreateConnectionFactory extends DefaultReporter {
+public class CreateConnectionFactory extends DefaultReporter {
 
 	@Override
-	public Object report(final Argument[] args, final Context context) throws ExtensionException, LogoException {
+	public Object report(Argument[] args, Context context) throws ExtensionException, LogoException {
 		return new ActiveMQConnectionFactory();
 	}
 

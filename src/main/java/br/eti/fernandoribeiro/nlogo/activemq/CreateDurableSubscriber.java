@@ -22,7 +22,7 @@ import org.nlogo.api.ExtensionException;
 import org.nlogo.api.LogoException;
 import org.nlogo.api.Syntax;
 
-public final class CreateDurableSubscriber extends DefaultReporter {
+public class CreateDurableSubscriber extends DefaultReporter {
 
 	@Override
 	public Syntax getSyntax() {
@@ -31,11 +31,11 @@ public final class CreateDurableSubscriber extends DefaultReporter {
 	}
 
 	@Override
-	public Object report(final Argument[] args, final Context context) throws ExtensionException, LogoException {
+	public Object report(Argument[] args, Context context) throws ExtensionException, LogoException {
 
 		try {
 			return ((Session) args[0].get()).createDurableSubscriber((Topic) args[1].get(), args[2].getString());
-		} catch (final JMSException e) {
+		} catch (JMSException e) {
 			throw new ExtensionException(e);
 		}
 

@@ -21,7 +21,7 @@ import org.nlogo.api.ExtensionException;
 import org.nlogo.api.LogoException;
 import org.nlogo.api.Syntax;
 
-public final class CreateSession extends DefaultReporter {
+public class CreateSession extends DefaultReporter {
 
 	@Override
 	public Syntax getSyntax() {
@@ -30,11 +30,11 @@ public final class CreateSession extends DefaultReporter {
 	}
 
 	@Override
-	public Object report(final Argument[] args, final Context context) throws ExtensionException, LogoException {
+	public Object report(Argument[] args, Context context) throws ExtensionException, LogoException {
 
 		try {
 			return ((Connection) args[0].get()).createSession(args[1].getBooleanValue(), args[2].getIntValue());
-		} catch (final JMSException e) {
+		} catch (JMSException e) {
 			throw new ExtensionException(e);
 		}
 

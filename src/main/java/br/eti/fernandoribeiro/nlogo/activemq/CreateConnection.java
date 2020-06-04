@@ -21,7 +21,7 @@ import org.nlogo.api.ExtensionException;
 import org.nlogo.api.LogoException;
 import org.nlogo.api.Syntax;
 
-public final class CreateConnection extends DefaultReporter {
+public class CreateConnection extends DefaultReporter {
 
 	@Override
 	public Syntax getSyntax() {
@@ -29,11 +29,11 @@ public final class CreateConnection extends DefaultReporter {
 	}
 
 	@Override
-	public Object report(final Argument[] args, final Context context) throws ExtensionException, LogoException {
+	public Object report(Argument[] args, Context context) throws ExtensionException, LogoException {
 
 		try {
 			return ((ConnectionFactory) args[0].get()).createConnection();
-		} catch (final JMSException e) {
+		} catch (JMSException e) {
 			throw new ExtensionException(e);
 		}
 

@@ -22,7 +22,7 @@ import org.nlogo.api.ExtensionException;
 import org.nlogo.api.LogoException;
 import org.nlogo.api.Syntax;
 
-public final class SendMessage extends DefaultCommand {
+public class SendMessage extends DefaultCommand {
 
 	@Override
 	public Syntax getSyntax() {
@@ -30,11 +30,11 @@ public final class SendMessage extends DefaultCommand {
 	}
 
 	@Override
-	public void perform(final Argument[] args, final Context context) throws ExtensionException, LogoException {
+	public void perform(Argument[] args, Context context) throws ExtensionException, LogoException {
 
 		try {
 			((MessageProducer) args[0].get()).send((Message) args[1].get());
-		} catch (final JMSException e) {
+		} catch (JMSException e) {
 			throw new ExtensionException(e);
 		}
 

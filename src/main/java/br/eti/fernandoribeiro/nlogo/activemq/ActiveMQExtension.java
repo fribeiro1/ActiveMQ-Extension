@@ -14,10 +14,10 @@ package br.eti.fernandoribeiro.nlogo.activemq;
 import org.nlogo.api.DefaultClassManager;
 import org.nlogo.api.PrimitiveManager;
 
-public final class ActiveMQExtension extends DefaultClassManager {
+public class ActiveMQExtension extends DefaultClassManager {
 
 	@Override
-	public void load(final PrimitiveManager primManager) {
+	public void load(PrimitiveManager primManager) {
 		primManager.addPrimitive("close-connection", new CloseConnection());
 		primManager.addPrimitive("create-connection", new CreateConnection());
 		primManager.addPrimitive("create-connection-factory", new CreateConnectionFactory());
